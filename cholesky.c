@@ -29,7 +29,7 @@ void show_matrix(const double *restrict A, const int n)
     {
         for (int j = 0; j < n; j++)
         {
-            printf("%2.5f ", A[i * n + j]);
+            printf("%2.5f ", A[j * n + i]);
         }
         printf("\n");
     }

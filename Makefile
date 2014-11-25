@@ -19,7 +19,7 @@ CXXFLAGS ?= $(COMMON_FLAGS) -std=c++11
 
 LDFLAGS := -lm
 INCLUDES := -I.
-DEFINES ?=
+DEFINES += -DDEBUG
 
 # Source and binaries
 CFILES := $(wildcard *.c)
