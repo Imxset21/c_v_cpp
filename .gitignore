@@ -1,0 +1,8 @@
+# C stuff
+*.o
+*.bin
+*.cbin
+*.cxxbin
+
+# perf data
+*.perfdat
