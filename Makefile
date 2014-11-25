@@ -4,10 +4,11 @@ SHELL := /bin/bash
 
 # performance evaluation
 PERF_ITER ?= 10
-PERF = perf stat
+PERF = perf stat -r $(PERF_ITER)
 
 # Common flags, with user-selected debugging
-COMMON_FLAGS ?= -O0 -march=native -Wall -Wextra -Wpedantic
+OPTLVL ?= 2
+COMMON_FLAGS = -O$(OPTLVL) -march=native -Wall -Wextra -Wpedantic
 ifdef DEBUG
 COMMON_FLAGS += -g
 endif
@@ -16,7 +17,7 @@ endif
 CFLAGS ?= $(COMMON_FLAGS) -std=c99
 CXXFLAGS ?= $(COMMON_FLAGS) -std=c++11
 
-LDFLAGS := 
+LDFLAGS := -lm
 INCLUDES := -I.
 DEFINES ?=
 
